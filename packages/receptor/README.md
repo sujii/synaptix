@@ -33,3 +33,11 @@ pnpm --filter @synaptix/receptor dev
 - **Embedding distribution drift** (cosine/EWMA over sliding windows).
 - **Lightweight style classifier** (prompted or tiny model).
 - **Analytics & storage** (ClickHouse, OTel metrics).
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+[Susumu Fujii](https://github.com/sujii)

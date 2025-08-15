@@ -33,3 +33,11 @@ pnpm --filter @synaptix/membrane dev
 - **Protocol transforms**: OpenAI / Anthropic / Custom Dialogue routers.
 - **Hot-reload** via Core SSE/ETag.
 - **OpenTelemetry** spans for end-to-end tracing.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+[Susumu Fujii](https://github.com/sujii)

@@ -85,3 +85,11 @@ See `.env.example`.
 - Core: SSE/ETag contract streaming; JSON-Schema + declarative policy DSL; Git/SQLite storage.
 - Membrane: multi-provider protocol transforms (OpenAI/Anthropic/Custom Dialogue); OTel spans.
 - Receptor: embedding-distribution drift (cosine/EWMA), lightweight style classifier, richer anomaly analytics.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+[Susumu Fujii](https://github.com/sujii)

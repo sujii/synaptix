@@ -62,3 +62,11 @@ async function getLatestContract() {
 - **SSE/ETag** streaming for hot-reload.
 - **JSON-Schema + declarative policy DSL**.
 - **Git/SQLite** backed persistence and version history.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+[Susumu Fujii](https://github.com/sujii)
