@@ -14,7 +14,7 @@ This monorepo provides a minimal, production-minded scaffold you can run today a
 
 ### What is Synaptix?
 
-Synaptix is not just a collection of libraries; it is an architectural pattern for designing complex software systems that can adapt and evolve. It is the practical implementation of the **SCDD (Structured Collaborative Design and Development)** theory, which treats system design as a living, verifiable contract.
+Synaptix is not just a collection of libraries; it is an architectural pattern for designing complex software systems that can adapt and evolve. It is the practical implementation of the **[SCDD (Structured Collaborative Design and Development)](https://github.com/sujii/scdd)** theory, which treats system design as a living, verifiable contract.
 
 Our goal is to move beyond rigid, brittle systems and create software that behaves like a biological organism: possessing a core genetic identity, a protective boundary, and a sensory system to adapt to its ever-changing environment.
 
