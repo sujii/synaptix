@@ -1,11 +1,12 @@
 {
   "name": "synaptix",
-  "description": "Monorepo for contract-aware conversational systems: Core (SSOT), Membrane (gateway), Receptor (drift feedback).",
+  "description": "An adaptive software architecture for building self-regulating, resilient systems inspired by biological life.",
   "author": {
     "name": "Susumu Fujii",
     "url": "https://github.com/sujii"
   },
   "license": "MIT",
+  "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.14.0",
   "workspaces": [
