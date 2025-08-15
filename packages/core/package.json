@@ -1,0 +1,22 @@
+{
+  "name": "@synaptix/core",
+  "description": "Contract SSOT: serves versioned behavior/policy specs, ingests drift, and applies contract patches.",
+  "author": {
+    "name": "Susumu Fujii",
+    "url": "https://github.com/sujii"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4"
+  }
+}

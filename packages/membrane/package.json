@@ -1,0 +1,22 @@
+{
+  "name": "@synaptix/membrane",
+  "description": "Selective-permeability gateway for Actors: validates against contracts, normalizes protocols, and observes traffic.",
+  "author": {
+    "name": "Susumu Fujii",
+    "url": "https://github.com/sujii"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4"
+  }
+}

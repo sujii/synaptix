@@ -1,0 +1,23 @@
+{
+  "name": "synaptix",
+  "description": "Monorepo for contract-aware conversational systems: Core (SSOT), Membrane (gateway), Receptor (drift feedback).",
+  "author": {
+    "name": "Susumu Fujii",
+    "url": "https://github.com/sujii"
+  },
+  "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@10.14.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:core": "pnpm --filter @synaptix/core dev",
+    "dev:membrane": "pnpm --filter @synaptix/membrane dev",
+    "dev:receptor": "pnpm --filter @synaptix/receptor dev",
+    "dev:all": "concurrently -n core,membrane,receptor -c green,cyan,magenta \"pnpm dev:core\" \"pnpm dev:membrane\" \"pnpm dev:receptor\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
