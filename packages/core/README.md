@@ -36,7 +36,8 @@ All other components, such as `@synaptix/membrane` and `@synaptix/receptor`, loo
 **Run**
 
 ```bash
-pnpm --filter @synaptix/core dev
+yarn build:core
+yarn dev:core
 # defaults to CORE_PORT=9010
 ```
 
@@ -44,8 +45,8 @@ Another service would typically fetch the contract on startup or periodically:
 
 ```typescript
 async function getLatestContract() {
-  const response = await fetch("http://localhost:9010/contracts/my-actor");
-  const contractVersion = response.headers.get("ETag");
+  const response = await fetch('http://localhost:9010/contracts/my-actor');
+  const contractVersion = response.headers.get('ETag');
   const contract = await response.json();
 
   console.log(`Loaded Contract version: ${contractVersion}`);

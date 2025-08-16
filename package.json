@@ -1,24 +1,67 @@
 {
   "name": "synaptix",
   "description": "An adaptive software architecture for building self-regulating, resilient systems inspired by biological life.",
+  "version": "0.1.0-alpha.0",
   "author": {
     "name": "Susumu Fujii",
     "url": "https://github.com/sujii"
   },
-  "license": "MIT",
-  "version": "0.1.0",
-  "private": true,
-  "packageManager": "pnpm@10.14.0",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "dev:core": "pnpm --filter @synaptix/core dev",
-    "dev:membrane": "pnpm --filter @synaptix/membrane dev",
-    "dev:receptor": "pnpm --filter @synaptix/receptor dev",
-    "dev:all": "concurrently -n core,membrane,receptor -c green,cyan,magenta \"pnpm dev:core\" \"pnpm dev:membrane\" \"pnpm dev:receptor\""
+  "dependencies": {
+    "@synaptix/core": "workspace:*",
+    "@synaptix/membrane": "workspace:*",
+    "@synaptix/receptor": "workspace:*"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0"
-  }
+    "@changesets/cli": "^2.29.5",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^24.3.0",
+    "@types/rollup": "^0.54.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^9.33.0",
+    "fixpack": "^4.0.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.46.2",
+    "rollup-plugin-dts": "^6.2.3",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2",
+    "vite": "^5.4.19",
+    "vitest": "^2.1.9"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@4.9.2",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:core": "yarn core build",
+    "build:membrane": "yarn membrane build",
+    "build:receptor": "yarn receptor build",
+    "changeset": "changeset",
+    "clean": "turbo run clean && rimraf node_modules .turbo .yarn/.cache",
+    "core": "yarn workspace @synaptix/core",
+    "dev": "turbo run dev --parallel",
+    "dev:core": "yarn core dev",
+    "dev:membrane": "yarn membrane dev",
+    "dev:receptor": "yarn receptor dev",
+    "docs": "turbo run docs",
+    "format": "prettier --write .",
+    "lint": "turbo run lint",
+    "membrane": "yarn workspace @synaptix/membrane",
+    "postrelease": "git push --follow-tags",
+    "preinstall": "corepack enable",
+    "prepare": "husky",
+    "receptor": "yarn workspace @synaptix/receptor",
+    "release": "changeset version && changeset publish",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

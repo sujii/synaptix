@@ -49,10 +49,13 @@ git clone [repository-url]
 cd synaptix
 
 # Install dependencies
-pnpm i
+yarn
+
+# Build dist files
+yarn build
 
 # Run all services in development mode
-pnpm dev:all
+yarn dev
 ```
 
 ## Workspace layout

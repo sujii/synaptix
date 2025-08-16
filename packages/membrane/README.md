@@ -12,7 +12,8 @@
 ## Run
 
 ```bash
-pnpm --filter @synaptix/membrane dev
+yarn build:membrane
+yarn dev:membrane
 # MEMBRANE_PORT=9011 UPSTREAM_BASE=http://localhost:8787 CORE_BASE=http://localhost:9010 RECEPTOR_BASE=http://localhost:9012
 ```
 
