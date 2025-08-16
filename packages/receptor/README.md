@@ -11,7 +11,8 @@
 ## Run
 
 ```bash
-pnpm --filter @synaptix/receptor dev
+yarn build:receptor
+yarn dev:receptor
 # RECEPTOR_PORT=9012 CORE_BASE=http://localhost:9010 DRIFT_TH=0.6
 ```
 
@@ -24,7 +25,6 @@ pnpm --filter @synaptix/receptor dev
 ## Endpoints
 
 - `POST /observe` → ingest observation (`{ lane, res.output, rag[], latencyMs… }`); compute drift; POST to Core:
-
   - `POST /drift` (always)
   - `POST /contracts/:name/patch` (when severe)
 

@@ -6,17 +6,40 @@
     "url": "https://github.com/sujii"
   },
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.0",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
-    "dev": "tsx src/index.ts"
+    "build": "rollup -c",
+    "dev": "vite build --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "clean": "rimraf dist"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2"
   },
   "devDependencies": {
-    "tsx": "^4.15.7",
-    "typescript": "^5.5.4"
+    "@types/express": "^5.0.3",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
   }
 }

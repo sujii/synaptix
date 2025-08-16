@@ -17,13 +17,13 @@ export type Contract = {
 };
 
 const initial: Contract = {
-  name: "default-actor.chat",
-  version: "1.0.0",
+  name: 'default-actor.chat',
+  version: '1.0.0',
   invariants: [
-    "Second person = you",
-    "Metaphor <= 1",
-    "Responses should be 2-4 sentences long",
-    "Reference the most recent shared memory at the beginning",
+    'Second person = you',
+    'Metaphor <= 1',
+    'Responses should be 2-4 sentences long',
+    'Reference the most recent shared memory at the beginning',
   ],
   schema: {
     request: { minMsgs: 1, maxMsgs: 40 },
@@ -31,9 +31,9 @@ const initial: Contract = {
   },
   policies: {
     lanes: {
-      A: { deny: ["explicit", "non-restrictive"], minRag: 2 },
+      A: { deny: ['explicit', 'non-restrictive'], minRag: 2 },
       B: { deny: [], minRag: 0 },
-      C: { deny: ["explicit"], minRag: 2 },
+      C: { deny: ['explicit'], minRag: 2 },
     },
   },
 };
@@ -49,8 +49,8 @@ export const Store = {
       ...diff,
       policies: { ...(current.policies || {}), ...(diff.policies || {}) },
     } as Contract;
-    const [maj, min, patch] = current.version.split(".").map(Number);
-    current.version = [maj, min, (patch || 0) + 1].join(".");
+    const [maj, min, patch] = current.version.split('.').map(Number);
+    current.version = [maj, min, (patch || 0) + 1].join('.');
     return current;
   },
 };
