@@ -53,8 +53,11 @@ corepack enable
 yarn init -2
 yarn set version stable
 
+# Setup yarn workspaces
+yarn link
+
 # Install dependencies
-yarn install
+yarn
 
 # Build dist files
 yarn build
