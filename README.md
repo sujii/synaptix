@@ -4,9 +4,9 @@
 
 Synaptix is a modular runtime for contract-aware conversational systems. It splits responsibilities into:
 
-- **@synaptix/core** — a Single Source of Truth (SSOT) for contracts (“genetic information”) that governs behavior.
-- **@synaptix/membrane** — a selective-permeability gateway per Actor that validates contract adherence, converts protocols, and (optionally) applies light immune reactions.
-- **@synaptix/receptor** — a passive observation layer that detects contract drift over time and feeds adaptive signals back to Core.
+- **[`@synaptix/core`](./packages/core)** — a Single Source of Truth (SSOT) for contracts (“genetic information”) that governs behavior.
+- **[`@synaptix/membrane`](./packages/membrane)** — a selective-permeability gateway per Actor that validates contract adherence, converts protocols, and (optionally) applies light immune reactions.
+- **[`@synaptix/receptor`](./packages/receptor)** — a passive observation layer that detects contract drift over time and feeds adaptive signals back to Core.
 
 This monorepo provides a minimal, production-minded scaffold you can run today and evolve later (SSE hot-reload, OTel, advanced detectors, etc.).
 
@@ -22,11 +22,11 @@ Our goal is to move beyond rigid, brittle systems and create software that behav
 
 The Synaptix ecosystem is modeled after the fundamental components of a living cell:
 
-- 🧬 **The Genetic Code (`@synaptix/core`):** Every system has a central, versioned Single Source of Truth (SSOT) called the **Contract**. This is the system's DNA, defining its invariants, schemas, and policies.
+- 🧬 **The Genetic Code ([`@synaptix/core`](./packages/core)):** Every system has a central, versioned Single Source of Truth (SSOT) called the **Contract**. This is the system's DNA, defining its invariants, schemas, and policies.
 
-- 🛡️ **The Cell Membrane (`@synaptix/membrane`):** Each service or `Actor` is protected by a membrane. This layer provides **selective permeability**, ensuring all interactions strictly adhere to the genetic Contract, translating external signals into the system's internal language.
+- 🛡️ **The Cell Membrane ([`@synaptix/membrane`](./packages/membrane)):** Each service or `Actor` is protected by a membrane. This layer provides **selective permeability**, ensuring all interactions strictly adhere to the genetic Contract, translating external signals into the system's internal language.
 
-- 🧠 **The Sensory System (`@synaptix/receptor`):** The system continuously observes its own behavior and its interaction with the environment. This sensory organ detects **"behavioral drift"**—the subtle, real-world deviation from the static Contract—and feeds this information back to the core, enabling the system to learn and adapt.
+- 🧠 **The Sensory System ([`@synaptix/receptor`](./packages/receptor)):** The system continuously observes its own behavior and its interaction with the environment. This sensory organ detects **"behavioral drift"**—the subtle, real-world deviation from the static Contract—and feeds this information back to the core, enabling the system to learn and adapt.
 
 ### The Adaptive Loop
 
@@ -41,15 +41,20 @@ This is the heartbeat of a Synaptix system.
 
 ### Getting Started
 
-This repository is a pnpm monorepo.
+This repository is a yarn workspaces + trubo monorepo.
 
 ```bash
 # Clone the repository
 git clone [repository-url]
 cd synaptix
 
+# Setup yarn/berry
+corepack enable
+yarn init -2
+yarn set version stable
+
 # Install dependencies
-yarn
+yarn install
 
 # Build dist files
 yarn build
@@ -85,9 +90,9 @@ See `.env.example`.
 
 ## Roadmap (high level)
 
-- Core: SSE/ETag contract streaming; JSON-Schema + declarative policy DSL; Git/SQLite storage.
-- Membrane: multi-provider protocol transforms (OpenAI/Anthropic/Custom Dialogue); OTel spans.
-- Receptor: embedding-distribution drift (cosine/EWMA), lightweight style classifier, richer anomaly analytics.
+- [Core](./packages/core): SSE/ETag contract streaming; JSON-Schema + declarative policy DSL; Git/SQLite storage.
+- [Membrane](./packages/membrane): multi-provider protocol transforms (OpenAI/Anthropic/Custom Dialogue); OTel spans.
+- [Receptor](./packages/receptor): embedding-distribution drift (cosine/EWMA), lightweight style classifier, richer anomaly analytics.
 
 ## License
 
