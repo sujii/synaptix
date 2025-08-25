@@ -49,9 +49,7 @@ git clone [repository-url]
 cd synaptix
 
 # Setup yarn/berry
-corepack enable
-yarn init -2
-yarn set version stable
+corepack enable && yarn init -2 && yarn set version stable
 
 # Setup yarn workspaces
 yarn link
